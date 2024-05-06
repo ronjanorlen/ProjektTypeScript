@@ -17,6 +17,7 @@ export class CoursesComponent {
   filteredCourses: Allcourses[] = [];
   filterValue: string = ""; // Filtrering tom först
   ascendDescend: boolean = true; // För stigande och fallande sortering
+  numberOfCourses: number = 0; // Visa antal kurser
 
  constructor(private allcoursesService: AllcoursesService) {}
 
@@ -25,14 +26,22 @@ export class CoursesComponent {
   this.allcoursesService.getCourses().subscribe((courses) => {
     this.allcourses = courses;
     this.filteredCourses = courses;
+    this.updateNumberOfCourses(); // Uppdatera antal kurser som visas
   });
  }
+
+  // Uppdatera antal kurser som visas
+  updateNumberOfCourses(): void {
+    this.numberOfCourses = this.filteredCourses.length;
+  }
+
  // Filtrera på namn eller kurskod
  applyFilter(): void {
   this.filteredCourses = this.allcourses.filter((course) => 
     course.courseCode.toLowerCase().includes(this.filterValue.toLowerCase()) ||
     course.courseName.toLowerCase().includes(this.filterValue.toLowerCase())
   );
+  this.updateNumberOfCourses(); // Vid filtrering, uppdatera antal kurser som visas
  }
 
 // Sortera på kurskod
