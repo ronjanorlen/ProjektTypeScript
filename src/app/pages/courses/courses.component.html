@@ -2,6 +2,11 @@
 
 <p>Leta en kurs i listan..</p>
 
+<div class="filter">
+    <label for="filter">Filtrera kurser</label>
+    <input type="text" id="filter" [(ngModel)]="filterValue" (input)="applyFilter()">
+</div>
+
 <table>
     <thead>
         <tr>
@@ -13,7 +18,7 @@
           </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let course of allcourses">
+      <tr *ngFor="let course of filteredCourses">
         <td>{{ course.courseCode }}</td>
         <td>{{ course.courseName }}</td>
         <td>{{ course.points }}</td>
