@@ -1,3 +1,24 @@
 <h2>Här är alla kurser</h2>
 
 <p>Leta en kurs i listan..</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Kurskod</th>
+            <th>Kursnamn</th>
+            <th>Poäng</th>
+            <th>Ämne</th>
+            <th>Kursplan</th>
+          </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let course of allcourses">
+        <td>{{ course.courseCode }}</td>
+        <td>{{ course.courseName }}</td>
+        <td>{{ course.points }}</td>
+        <td>{{ course.subject }}</td>
+        <td>{{ course.syllabus }}</td>
+      </tr>
+    </tbody>
+  </table>
