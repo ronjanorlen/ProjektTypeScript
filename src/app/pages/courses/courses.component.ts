@@ -15,7 +15,8 @@ export class CoursesComponent {
   // Properties
   allcourses: Allcourses [] = [];
   filteredCourses: Allcourses[] = [];
-  filterValue: string = "";
+  filterValue: string = ""; // Filtrering tom först
+  ascendDescend: boolean = true; // För stigande och fallande sortering
 
  constructor(private allcoursesService: AllcoursesService) {}
 
@@ -34,4 +35,35 @@ export class CoursesComponent {
   );
  }
 
+// Sortera på kurskod
+sortCoursesByCode(): void {
+  this.filteredCourses.sort((a, b) => {
+    return this.ascendDescend ? a.courseCode.localeCompare(b.courseCode) : b.courseCode.localeCompare(a.courseCode);
+  });
+  this.ascendDescend = !this.ascendDescend;
+}
+
+// Sortera på kursnamn
+sortCoursesByName(): void {
+  this.filteredCourses.sort((a, b) => {
+    return this.ascendDescend ? a.courseName.localeCompare(b.courseName) : b.courseName.localeCompare(a.courseName);
+  });
+  this.ascendDescend = !this.ascendDescend;
+}
+
+// Sortera på poäng
+sortCoursesByPoints(): void {
+  this.filteredCourses.sort((a, b) => {
+    return this.ascendDescend ? a.points - b.points : b.points - a.points;
+  });
+  this.ascendDescend = !this.ascendDescend;
+}
+
+// Sortera på ämne 
+sortCoursesBySubject(): void {
+  this.filteredCourses.sort((a, b) => {
+    return this.ascendDescend ? a.subject.localeCompare(b.subject) : b.subject.localeCompare(a.subject);
+  });
+  this.ascendDescend = !this.ascendDescend;
+}
 }

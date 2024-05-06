@@ -7,13 +7,17 @@
     <input type="text" id="filter" [(ngModel)]="filterValue" (input)="applyFilter()">
 </div>
 
+@if(filteredCourses.length === 0 ) {
+    <p>Inga kurser hittades..</p>
+}
+
 <table>
     <thead>
         <tr>
-            <th>Kurskod</th>
-            <th>Kursnamn</th>
-            <th>Poäng</th>
-            <th>Ämne</th>
+            <th (click)="sortCoursesByCode()">Kurskod</th>
+            <th (click)="sortCoursesByName()">Kursnamn</th>
+            <th (click)="sortCoursesByPoints()">Poäng</th>
+            <th (click)="sortCoursesBySubject()">Ämne</th>
             <th>Kursplan</th>
           </tr>
     </thead>
@@ -23,7 +27,7 @@
         <td>{{ course.courseName }}</td>
         <td>{{ course.points }}</td>
         <td>{{ course.subject }}</td>
-        <td>{{ course.syllabus }}</td>
+        <td><a href="{{ course.syllabus }}">Kursplan</a></td>
       </tr>
     </tbody>
   </table>
