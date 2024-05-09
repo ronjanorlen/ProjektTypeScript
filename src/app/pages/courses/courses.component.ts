@@ -3,6 +3,7 @@ import { Allcourses } from '../../model/allcourses';
 import { AllcoursesService } from '../../services/allcourses.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { RamschemaService } from '../../services/ramschema.service';
 
 @Component({
   selector: 'app-courses',
@@ -21,7 +22,7 @@ export class CoursesComponent {
   subjects: string [] = []; // Lagra alla ämnen
   selectedSubject: string = ""; // Sortering tom först
 
- constructor(private allcoursesService: AllcoursesService) {}
+ constructor(private allcoursesService: AllcoursesService, private ramschemaService: RamschemaService) {}
 
   // När applikationen startar
  ngOnInit() {
@@ -96,4 +97,9 @@ sortCoursesBySubject(): void {
   });
   this.ascendDescend = !this.ascendDescend;
 }
+
+addToSchedule(course: Allcourses) {
+  this.ramschemaService.addCourse(course);
+}
+
 }

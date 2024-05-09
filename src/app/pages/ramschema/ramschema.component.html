@@ -1,3 +1,24 @@
 <h2>Här är ditt ramschema</h2>
 
-<p>Lite kurser..</p>
+<table>
+    <thead>
+        <tr>
+            <th>Kurskod</th>
+            <th>Kursnamn</th>
+            <th>Poäng</th>
+            <th>Ämne</th>
+            <th>Kursplan</th>
+            <th>Ta bort</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let course of selectedCourses">
+            <td>{{ course.courseCode }}</td>
+            <td>{{ course.courseName }}</td>
+            <td>{{ course.points }}</td>
+            <td>{{ course.subject }}</td>
+            <td>{{ course.syllabus }}</td>
+            <td><button (click)="removeCourse(course)">Ta bort</button></td>
+        </tr>
+    </tbody>
+</table>

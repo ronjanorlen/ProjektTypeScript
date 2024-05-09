@@ -26,6 +26,7 @@
             <th (click)="sortCoursesByPoints()">Poäng</th>
             <th (click)="sortCoursesBySubject()">Ämne</th>
             <th>Kursplan</th>
+            <th>Lägg till</th>
           </tr>
     </thead>
     <tbody>
@@ -34,7 +35,8 @@
         <td>{{ course.courseName }}</td>
         <td>{{ course.points }}</td>
         <td>{{ course.subject }}</td>
-        <td><a href="{{ course.syllabus }}">Kursplan</a></td>
+        <td><a href="{{ course.syllabus }}" target="_blank">Kursplan</a></td>
+        <td><button (click)="addToSchedule(course)">Lägg till</button></td>
       </tr>
     </tbody>
   </table>
