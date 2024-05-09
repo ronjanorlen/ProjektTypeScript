@@ -6,6 +6,7 @@ import { Allcourses } from '../model/allcourses';
 })
 export class RamschemaService {
   selectedCourses: Allcourses[] = []; // Lagra kurser i ramschemat
+  totalPoints: number = 0; // Antal poäng
 
   constructor() { 
     this.loadMyCourses();
@@ -27,8 +28,16 @@ export class RamschemaService {
   }
 
   // Hämta kurser i ramschemat
-  getSelectedCourses() {
-    return this.selectedCourses;
+  getSelectedCourses(): Allcourses[] {
+    // Hämta från localstorage
+    const savedCourses = localStorage.getItem('selectedCourses');
+    // Kontroll om det finns några kurser
+    if (savedCourses) {
+      return this.selectedCourses;
+      // Om inga kurser finns, returnera tom array
+    } else {
+      return [];
+    }
   }
 
   // Ladda kurser från localstorage
@@ -43,4 +52,14 @@ export class RamschemaService {
     saveMyCourses(): void {
       localStorage.setItem('selectedCourses', JSON.stringify(this.selectedCourses));
     }
+
+    // Hämta totala poängen
+    getTotalPoints(): number {
+      let totalPoints = 0;
+      this.selectedCourses.forEach(course => {
+        totalPoints += course.points;
+      });
+      return totalPoints;
+    }
+
 }
