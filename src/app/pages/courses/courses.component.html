@@ -3,12 +3,20 @@
 <p>Leta en kurs i listan..</p>
 
 <div class="filter">
-    <label for="filter">Filtrera kurser</label>
+    <label for="filter">Sök: </label>
     <input type="text" id="filter" [(ngModel)]="filterValue" (input)="applyFilter()">
 </div>
 
+<div class="sort-subject">
+  <label for="subject">Välj ämne: </label>
+  <select id="subject" [(ngModel)]="selectedSubject" (change)="filterBySubject()">
+    <option value="">Alla ämnen</option>
+    <option *ngFor="let subject of subjects" [value]="subject">{{ subject }}</option>
+  </select>
+</div>
+
 <p *ngIf="numberOfCourses === 0">Inga kurser hittades..</p>
-<p *ngIf="numberOfCourses > 0">Antal kurser som visas: {{ numberOfCourses }}</p>
+<p *ngIf="numberOfCourses > 0">Listar {{ numberOfCourses }} kurser av totalt {{ allcourses.length }}</p>
 
 <table>
     <thead>

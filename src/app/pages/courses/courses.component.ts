@@ -13,11 +13,13 @@ import { FormsModule } from '@angular/forms';
 })
 export class CoursesComponent {
   // Properties
-  allcourses: Allcourses [] = [];
-  filteredCourses: Allcourses[] = [];
+  allcourses: Allcourses [] = []; // Lagra alla kurser
+  filteredCourses: Allcourses[] = []; // Lagra alla filtrerade kurser
   filterValue: string = ""; // Filtrering tom först
   ascendDescend: boolean = true; // För stigande och fallande sortering
   numberOfCourses: number = 0; // Visa antal kurser
+  subjects: string [] = []; // Lagra alla ämnen
+  selectedSubject: string = ""; // Sortering tom först
 
  constructor(private allcoursesService: AllcoursesService) {}
 
@@ -27,6 +29,7 @@ export class CoursesComponent {
     this.allcourses = courses;
     this.filteredCourses = courses;
     this.updateNumberOfCourses(); // Uppdatera antal kurser som visas
+    this.subjects = this.chooseSubject(courses); // Hämta och lagra alla ämnen
   });
  }
 
@@ -34,6 +37,24 @@ export class CoursesComponent {
   updateNumberOfCourses(): void {
     this.numberOfCourses = this.filteredCourses.length;
   }
+
+  // Hämta alla ämnen
+  chooseSubject(courses: Allcourses[]): string[] {
+    const eachSubject = new Set<string>();
+    courses.forEach(course => eachSubject.add(course.subject));
+    return Array.from(eachSubject);
+  }
+
+  // Sortera på ämne
+  filterBySubject(): void {
+    if (this.selectedSubject === '') {
+      this.filteredCourses = this.allcourses; // Visa alla kurser om inget ämne valts
+    } else {
+      this.filteredCourses = this.allcourses.filter(course => course.subject === this.selectedSubject);
+    }
+    this.updateNumberOfCourses(); // Uppdatera antal kurser som visas
+  }
+
 
  // Filtrera på namn eller kurskod
  applyFilter(): void {
