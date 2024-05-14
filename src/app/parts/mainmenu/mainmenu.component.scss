@@ -42,81 +42,22 @@ nav {
 #header-content {
     position: relative; 
 
+    #header-text {
+        background-color: rgba(255, 255, 255, 0.6);
+        position: absolute;
+        width: 80%;
+        top: 40%;
+        left: 50%;
+        padding: 5px 25px;
+        border-radius: 8px;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+    }
+
     img {
         padding: 0;
         width: 100%;
         height: auto;
         position: relative;
-    }
-
-    #header-links {
-        position: absolute;
-        width: 80%;
-        top: 30%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 1;
-        display: table; // Använder tabell-layout
-    }
-    
-        ul {
-            display: table-row; // Varje ul blir en rad
-            padding: 0;
-            margin: 0;
-        }
-    
-        ul li {
-            display: table-cell; // Varje li blir en cell
-            padding: 5px 25px;
-        }
-    
-        ul a {
-            display: block;
-            letter-spacing: 0.2rem;
-            text-decoration: none;
-            padding: 8px 10px;
-            font-size: 24px;
-            color: #000;
-        }
-
-        ul i {
-            padding-left: 55px;
-            font-size: 20px;
-        }
-    }
-
-#school a {
-    background-color: white; 
-    border-top: 12px solid #D7B17C;
-
-    &:hover {
-        background-color: #D7B17C;
-    }
-}
-
-#students a {
-    background-color: white; 
-    border-top: 12px solid #73A790;
-
-    &:hover {
-        background-color: #73A790;
-    }
-}
-
-#campus a {
-    background-color: white; 
-    border-top: 12px solid #EABAB9;
-
-    &:hover {
-        background-color: #EABAB9;
-    }
-}
-
-#contact a {
-    background-color: white; 
-    border-top: 12px solid #2A4765;
-
-    &:hover {
-        background-color: #2A4765;
     }
 }

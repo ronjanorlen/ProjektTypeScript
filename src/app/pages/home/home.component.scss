@@ -1,0 +1,102 @@
+#home-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px 5px;
+    border: 1px solid #000;
+}
+
+.home-gallery {
+    flex-basis: calc(50% - 20px);
+    padding: 10px 50px;
+    width: 50%;
+    margin-bottom: 20px;
+
+    .homeImage {
+        max-width: 100%;
+        height: auto;
+    }
+
+}
+
+#header-links {
+    width: 80%;
+    margin: 25px auto;
+    display: table; // Använder tabell-layout
+
+    ul {
+        display: table-row; // Varje ul blir en rad
+        padding: 0;
+        margin: 0;
+    }
+
+    ul li {
+        display: table-cell; // Varje li blir en cell
+        padding: 5px 25px;
+    }
+
+    ul a {
+        display: block;
+        letter-spacing: 0.2rem;
+        text-decoration: none;
+        padding: 8px 10px;
+        font-size: 24px;
+        color: #000;
+    }
+
+    ul i {
+        padding-left: 55px;
+        font-size: 20px;
+    }
+}
+
+
+#school a {
+background-color: white; 
+border-top: 12px solid #D7B17C;
+border-bottom: 1px solid #2A4765;
+border-left: 1px solid #2A4765;
+border-right: 1px solid #2A4765;
+
+&:hover {
+    background-color: #D7B17C;
+}
+}
+
+#students a {
+background-color: white; 
+border-top: 12px solid #73A790;
+border-bottom: 1px solid #2A4765;
+border-left: 1px solid #2A4765;
+border-right: 1px solid #2A4765;
+
+&:hover {
+    background-color: #73A790;
+}
+}
+
+#campus a {
+background-color: white; 
+border-top: 12px solid #EABAB9;
+border-bottom: 1px solid #2A4765;
+border-left: 1px solid #2A4765;
+border-right: 1px solid #2A4765;
+
+&:hover {
+    background-color: #EABAB9;
+}
+}
+
+#contact a {
+background-color: white; 
+border-top: 12px solid #2A4765;
+border-bottom: 1px solid #2A4765;
+border-left: 1px solid #2A4765;
+border-right: 1px solid #2A4765;
+
+&:hover {
+    background-color: #2A4765;
+}
+}

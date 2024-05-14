@@ -1,1 +1,27 @@
-<h2>Startsidan</h2>
+<div id="header-links">
+    <ul>
+        <li id="school"><a routerLink="/courses">Utbildning <i class="fa-solid fa-arrow-right"></i></a></li>
+        <li id="students"><a routerLink="/">Studentkåren <i class="fa-solid fa-arrow-right"></i></a></li>
+        <li id="campus"><a routerLink="/">Campus <i class="fa-solid fa-arrow-right"></i></a></li>
+        <li id="contact"><a routerLink="/">Kontakta oss <i class="fa-solid fa-arrow-right"></i></a></li>
+    </ul>
+</div>
+<div id="home-container">
+    <div class="home-gallery">
+        <img class="homeImage" [src]="homeImage1" alt="Tre studenter sitter vid ett bord med varsin laptop">
+        <div class="gallery-text"><p>Lite text om kurser och utbildning</p></div>
+    </div>
+
+    <div class="home-gallery">
+        <img class="homeImage" [src]="homeImage2" alt="En grupp studenter sitter runt ett bord">
+        <div class="gallery-text"><p>Vill du vara med i studentkåren?</p></div>
+    </div>
+    <div class="home-gallery">
+        <img class="homeImage" [src]="homeImage3" alt="Campus för ett Universitet">
+        <div class="gallery-text"><p>Campus</p></div>
+    </div>
+    <div class="home-gallery">
+        <img class="homeImage" [src]="homeImage4" alt="Campus för ett Universitet">
+        <div class="gallery-text"><p>Skapa ditt egna ramschema</p></div>
+    </div>
+</div>
