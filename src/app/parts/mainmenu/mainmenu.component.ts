@@ -9,5 +9,7 @@ import { RouterLink } from '@angular/router';
   styleUrl: './mainmenu.component.scss'
 })
 export class MainmenuComponent {
+  // Property för headerbild
+  headerImage: string = "./assets/images/header1.jpg";
 
 }

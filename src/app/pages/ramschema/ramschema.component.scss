@@ -1,0 +1,58 @@
+#ramschema-container {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: 0 auto;
+}
+
+/* Tabellen */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  
+  /* Tabellhuvudet */
+  thead {
+    background-color: #f2f2f2;
+  }
+  
+  /* Tabellceller i huvudet */
+  th {
+    padding: 10px;
+    text-align: left;
+    font-size: 18px;
+  }
+  /* Tabellrader */
+tbody tr {
+    background-color: white; 
+    border-bottom: 1px solid #ddd; 
+  }
+  
+  /* Tabellceller i rader */
+  td {
+    padding: 4px 12px;
+    text-align: left;
+  }
+  
+  /* Kursplan-länk */
+  a {
+    color: blue;
+    text-decoration: none;
+  }
+  
+  /* Lägg till-knapp */
+  button {
+    background-color: #324961;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    white-space: nowrap; 
+  }
+  
+  button:hover {
+    background-color: #154d8a;
+  }

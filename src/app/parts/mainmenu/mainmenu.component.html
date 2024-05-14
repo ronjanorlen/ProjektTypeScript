@@ -1,7 +1,15 @@
-<nav>
-    <ul>
-        <li><a routerLink="/">Startsida</a></li>
-        <li><a routerLink="/courses">Kurser</a></li>
-        <li><a routerLink="/ramschema">Ramschema</a></li>
-    </ul>
-</nav>
+<!-- Header med huvudmeny, Angular Routing  -->
+<header>
+    <a id="logotyp" routerLink="/home">
+        <h1>Björks Universitet</h1>
+    </a>
+
+    <nav>
+        <ul>
+            <li><a routerLink="/">Björks</a></li>
+            <li><a routerLink="/courses">Kurser</a></li>
+            <li><a routerLink="/ramschema">Ramschema</a></li>
+        </ul>
+    </nav>
+</header>
+<img id="headerimg" [src]="headerImage" alt="Fyra studenter som skrattar i ett rum">

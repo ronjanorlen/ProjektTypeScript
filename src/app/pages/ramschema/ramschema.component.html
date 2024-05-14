@@ -1,3 +1,4 @@
+<div id="ramschema-container">
 <h2>Här är ditt ramschema</h2>
 
 <table>
@@ -17,7 +18,7 @@
             <td>{{ course.courseName }}</td>
             <td>{{ course.points }}</td>
             <td>{{ course.subject }}</td>
-            <td>{{ course.syllabus }}</td>
+            <td><a href="{{ course.syllabus }}" target="_blank">Kursplan</a></td>
             <td><button (click)="removeCourse(course)">Ta bort</button></td>
         </tr>
     </tbody>
@@ -25,4 +26,5 @@
 
 <div class="total-points">
     <p *ngIf="totalPoints > 0">Total poäng: {{ totalPoints }}</p>
+</div>
 </div>
