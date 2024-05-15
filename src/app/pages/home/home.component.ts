@@ -14,4 +14,6 @@ export class HomeComponent {
   homeImage2: string = "./assets/images/home2.jpg";
   homeImage3: string = "./assets/images/campus.jpg";
   homeImage4: string ="./assets/images/home4.jpg";
+  // Property för headerbild
+  headerImage: string = "./assets/images/header1.jpg";
 }
