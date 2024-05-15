@@ -5,23 +5,29 @@
 
 <div class="filter">
     <label for="filter">Sök: </label>
+    <!-- Tvåvägsdatabinding för input i sökruta, anropa metod för att filtrera kurser vid input -->
     <input type="text" id="filter" [(ngModel)]="filterValue" (input)="applyFilter()">
+    <!-- Kontroll för matchat resultat, skriv ut meddelande om ingen matchning sker -->
+    <p *ngIf="numberOfCourses === 0">Inga kurser hittades..</p>
 </div>
 
 <div class="sort-subject">
   <label for="subject">Välj ämne: </label>
+  <!-- Anropa metod för filtrering av kurser baserat på valt ämne -->
   <select id="subject" [(ngModel)]="selectedSubject" (change)="filterBySubject()">
+    <!-- Default alla ämnen -->
     <option value="">Alla ämnen</option>
+    <!-- Loopa igenom alla ämnen, skriv ut med interpolation i options -->
     <option *ngFor="let subject of subjects" [value]="subject">{{ subject }}</option>
   </select>
 </div>
-
-<p *ngIf="numberOfCourses === 0">Inga kurser hittades..</p>
-<p *ngIf="numberOfCourses > 0">Listar {{ numberOfCourses }} kurser av totalt {{ allcourses.length }}</p>
+<!-- Skriv ut antal kurser som visas av totala antalet kurser, använd filtrerade kurser -->
+<p *ngIf="numberOfCourses > 0">Listar {{ numberOfCourses }} kurser av totalt {{ filteredCourses.length }}</p>
 
 <table>
     <thead>
         <tr>
+          <!-- Använder eventbinding, vid klick - anropa metoder för att sortera -->
             <th (click)="sortCoursesByCode()">Kurskod</th>
             <th (click)="sortCoursesByName()">Kursnamn</th>
             <th (click)="sortCoursesByPoints()">Poäng</th>
@@ -31,14 +37,19 @@
           </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let course of filteredCourses">
+      <!-- Loopa igenom kurslista, använd paginering -->
+      <tr *ngFor="let course of filteredCourses | paginate: { itemsPerPage: coursesPerPage, currentPage: thisPage }">
         <td>{{ course.courseCode }}</td>
         <td>{{ course.courseName }}</td>
         <td>{{ course.points }}</td>
         <td>{{ course.subject }}</td>
-        <td><a href="{{ course.syllabus }}" target="_blank">Kursplan</a></td>
+        <!-- Propertybinding för länk till kursplan-->
+        <td><a [href]="course.syllabus" target="_blank">Kursplan</a></td>
         <td><button (click)="addToSchedule(course)">Lägg till</button></td>
       </tr>
     </tbody>
   </table>
+  <!-- Paginering, anropa metod för sidbyte -->
+  <pagination-controls (pageChange)="changePage($event)" previousLabel="Föregående"
+            nextLabel="Nästa"></pagination-controls>
 </div>
