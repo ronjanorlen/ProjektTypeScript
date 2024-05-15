@@ -1,8 +1,13 @@
 <div id="course-container">
-<h2>Här är alla kurser</h2>
+  <h1>Plugga på Björks Universitet</h1>
 
-<p>Leta en kurs i listan..</p>
-
+<p>Här finns en mängd olika kurser och ämnen att välja mellan, ett rikt studentliv och 
+  ett levande campus. <br>
+  Sätt ihop ett eget ramschema genom att lägga till de kurser du är intresserad av. 
+  De kurser du har valt hittar du sedan under "Ramschema" i menyn.
+</p>
+<div id="search">
+<h2>Hitta din drömkurs</h2>
 <div class="filter">
     <label for="filter">Sök: </label>
     <!-- Tvåvägsdatabinding för input i sökruta, anropa metod för att filtrera kurser vid input -->
@@ -23,7 +28,7 @@
 </div>
 <!-- Skriv ut antal kurser som visas av totala antalet kurser, använd filtrerade kurser -->
 <p *ngIf="numberOfCourses > 0">Listar {{ numberOfCourses }} kurser av totalt {{ filteredCourses.length }}</p>
-
+</div>
 <table>
     <thead>
         <tr>
