@@ -17,6 +17,10 @@ export class RamschemaService {
     this.selectedCourses.push(course);
     this.saveMyCourses(); // Spara i localstorage
   }
+   // Kontrollera om kursen redan finns i ramschema
+ isCourseAdded(course: Allcourses): boolean {
+  return this.selectedCourses.some(c => c.courseCode === course.courseCode);
+}
 
   // Ta bort kurs baserat på index
   removeCourse(course: Allcourses): void {
@@ -61,5 +65,4 @@ export class RamschemaService {
       });
       return totalPoints;
     }
-
 }

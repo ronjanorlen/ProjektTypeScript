@@ -24,6 +24,7 @@ export class CoursesComponent {
   selectedSubject: string = ""; // Sortering tom först
   thisPage: number = -1; // Aktuell sida
   coursesPerPage: number = 30; // Antal kurser som visas på en sida
+  addedCourses: Map<string, boolean> = new Map<string, boolean>(); // Map för att hålla reda på tillagda kurser
 
  constructor(private allcoursesService: AllcoursesService, private ramschemaService: RamschemaService) {}
 
@@ -142,9 +143,18 @@ sortCoursesBySubject(): void {
   });
   this.ascendDescend = !this.ascendDescend;
 }
+
 // Lägg till kurs i ramschema
 addToSchedule(course: Allcourses): void {
-  this.ramschemaService.addCourse(course);
+  // Kontroll om kursen redan finns i ramschema
+  if (!this.ramschemaService.isCourseAdded(course)) {
+    // Om inte, lägg till i ramschema
+    this.ramschemaService.addCourse(course);
+    // Markera kursen som tillagd
+    this.addedCourses.set(course.courseCode, true);
+  } else {
+    // Om kursen redan är tillagd
+    alert("Denna kurs finns redan i ramschemat.");
+  }
 }
-
 }

@@ -45,7 +45,11 @@
         <td>{{ course.subject }}</td>
         <!-- Propertybinding för länk till kursplan-->
         <td><a [href]="course.syllabus" target="_blank">Kursplan</a></td>
-        <td><button (click)="addToSchedule(course)">Lägg till</button></td>
+        <!-- Lägg till kurs, kontrollera om kurs redan är tillagd, -->
+        <td> <button *ngIf="!addedCourses.get(course.courseCode)" (click)="addToSchedule(course)">Lägg till</button>
+          <!-- När kurs läggs till, visa text -->
+          <span *ngIf="addedCourses.get(course.courseCode)">Tillagd</span>
+        </td>
       </tr>
     </tbody>
   </table>
