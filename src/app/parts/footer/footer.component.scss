@@ -1,9 +1,18 @@
 footer {
-    margin-top: 50px;
-    bottom: 0;
-    width: 100%;
-    height: 120px;
-    line-height: 60px;
     background-color: #585858;
-    color: #fff;
+    width: 100%;
+    height: 220px;
+    display: flex;
+    justify-content: space-evenly;
+    margin: auto;
+    flex-shrink: 0;
+    color: white;
+}
+
+
+.school-info li, .contact-info li, .links li {
+    list-style-type: none;
+    text-align: center;
+    line-height: 1.8rem;
+    margin-top: 8px;
 }
