@@ -16,3 +16,17 @@ footer {
     line-height: 1.8rem;
     margin-top: 8px;
 }
+
+// Media queries
+
+@media only screen and (max-width: 600px) {
+    footer {
+        flex-direction: column;
+        height: 500px;
+    }
+    
+    footer li {
+        align-items: center;
+        margin-right: 10%;
+    }
+}

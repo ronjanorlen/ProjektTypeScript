@@ -129,3 +129,50 @@ border-right: 1px solid #2A4765;
     background-color: #2A4765;
 }
 }
+
+// Media queries
+
+@media only screen and (max-width: 600px) {
+
+    #header-content {
+        position: static; /* Återställ till standard */
+        display: block; 
+        text-align: center; 
+    }
+
+    #header-text {
+        display: none;
+    }
+
+    img {
+        width: 100%; 
+        position: static; /* Återställ position till standard */
+    }
+
+    #header-links ul li {
+        display: block; /* Ändra display till block för att få länkarna på egen rad */
+        padding: 5px 0; 
+    }
+
+    #header-links ul a {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    #header-links ul i {
+        display: none;
+    }
+
+    #home-container {
+        display: block;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .home-gallery {
+        display: block;
+        width: 100%;
+        margin: 0 auto;
+        padding: 5px 5px;
+    }
+}
