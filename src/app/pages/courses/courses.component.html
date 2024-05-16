@@ -29,6 +29,7 @@
 <!-- Skriv ut antal kurser som visas av totala antalet kurser, använd filtrerade kurser -->
 <p *ngIf="numberOfCourses > 0">Listar {{ numberOfCourses }} kurser av totalt {{ filteredCourses.length }}</p>
 </div>
+<div id="courses">
 <table>
     <thead>
         <tr>
@@ -61,4 +62,5 @@
   <!-- Paginering, anropa metod för sidbyte -->
   <pagination-controls (pageChange)="changePage($event)" previousLabel="Föregående"
             nextLabel="Nästa"></pagination-controls>
+          </div>
 </div>
