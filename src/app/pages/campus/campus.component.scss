@@ -1,0 +1,122 @@
+#campus-container {
+    position: relative;
+
+    #campus-welcome {
+        position: absolute;
+        width: 50%;
+        top: 25%;
+        left: 33%;
+        padding: 15px 25px;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        color: white;
+    }
+    #campus-welcome p {
+        max-width: 90ch;
+        font-size: 22px;
+        line-height: 1.4em;
+    }
+
+    #campus-welcome h1 {
+        font-size: 38px;
+        
+    }
+    img {
+        padding: 0;
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+}
+#header-links {
+    width: 80%;
+    margin: 3% auto;
+    display: table; // Använder tabell-layout
+
+    ul {
+        display: table-row; // Varje ul blir en rad
+        padding: 0;
+        margin: 0;
+    }
+
+    ul li {
+        display: table-cell; // Varje li blir en cell
+        padding: 5px 25px;
+    }
+
+    ul a {
+        display: block;
+        letter-spacing: 0.2rem;
+        text-decoration: none;
+        padding: 8px 10px;
+        font-size: 24px;
+        color: #000;
+    }
+
+    ul i {
+        padding-left: 45px;
+        font-size: 20px;
+    }
+}
+
+#school a {
+    background-color: white; 
+    border-top: 12px solid #D7B17C;
+    border-bottom: 1px solid #2A4765;
+    border-left: 1px solid #2A4765;
+    border-right: 1px solid #2A4765;
+    
+    &:hover {
+        background-color: #D7B17C;
+    }
+    }
+    
+    #students a {
+    background-color: white; 
+    border-top: 12px solid #73A790;
+    border-bottom: 1px solid #2A4765;
+    border-left: 1px solid #2A4765;
+    border-right: 1px solid #2A4765;
+    
+    &:hover {
+        background-color: #73A790;
+    }
+    }
+    
+    #campus a {
+    background-color: white; 
+    border-top: 12px solid #EABAB9;
+    border-bottom: 1px solid #2A4765;
+    border-left: 1px solid #2A4765;
+    border-right: 1px solid #2A4765;
+    
+    &:hover {
+        background-color: #EABAB9;
+    }
+    }
+    
+    #contact a {
+    background-color: white; 
+    border-top: 12px solid #2A4765;
+    border-bottom: 1px solid #2A4765;
+    border-left: 1px solid #2A4765;
+    border-right: 1px solid #2A4765;
+    
+    &:hover {
+        background-color: #2A4765;
+    }
+    }
+
+    #campus-text {
+        width: 60%;
+        margin: 0 auto;
+        line-height: 1.8em;
+
+        h1 {
+            font-size: 36px;
+        }
+
+        p {
+            font-size: 18px;
+        }
+    }
