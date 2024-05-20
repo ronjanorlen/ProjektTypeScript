@@ -120,3 +120,42 @@
             font-size: 18px;
         }
     }
+
+    // Media queries
+
+    @media only screen and (max-width: 600px) {
+        #campus-container {
+            position: static; /* Återställ till standard */
+            display: block; 
+            text-align: center; 
+        }
+    
+        #campus-welcome {
+            display: none;
+        }
+    
+        img {
+            width: 100%; 
+            position: static; /* Återställ position till standard */
+        }
+    
+        #header-links ul li {
+            display: block; /* Ändra display till block för att få länkarna på egen rad */
+            padding: 5px 0; 
+        }
+    
+        #header-links ul a {
+            font-size: 18px;
+            text-align: center;
+        }
+    
+        #header-links ul i {
+            display: none;
+        }
+    
+        #campus-text {
+            display: block;
+            width: 80%;
+            margin: 10% auto;
+        }
+    }

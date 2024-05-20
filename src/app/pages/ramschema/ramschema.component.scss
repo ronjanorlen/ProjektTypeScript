@@ -73,3 +73,22 @@ tbody tr {
     background-color: #154d8a;
   }
 
+// Media queries 
+
+@media only screen and (max-width: 600px) {
+  #ramschema-container {
+    width: 100%;
+    overflow-x: auto; /* Horisontell scroll för tabell */
+  }
+  h1 {
+    line-height: 1.2em;
+  }
+
+  p {
+    line-height: 1.6em;
+  }
+
+  table {
+    margin-top: 8%;
+  }
+}
