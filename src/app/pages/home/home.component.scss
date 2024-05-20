@@ -1,22 +1,19 @@
 #header-content {
-    position: relative; 
+    position: relative;
 
-    #header-text {
-        background-color: rgba(201, 205, 209, 0.8);
+    #header-welcome {
         position: absolute;
-        width: 50%;
-        top: 50%;
-        left: 50%;
+        width: 60%;
+        top: 74%;
+        left: 33%;
         padding: 15px 25px;
-        border-radius: 8px;
         transform: translate(-50%, -50%);
         z-index: 1;
+        color: rgb(255, 255, 255);
     }
 
-    #header-text p {
-        max-width: 90ch;
-        font-size: 16px;
-        line-height: 1.4em;
+    #header-welcome h2 {
+        font-size: 50px;
     }
 
     img {
@@ -34,7 +31,6 @@
 
     ul {
         display: table-row; // Varje ul blir en rad
-        padding: 0;
         margin: 0;
     }
 
@@ -47,19 +43,17 @@
         display: block;
         letter-spacing: 0.2rem;
         text-decoration: none;
-        padding: 8px 10px;
-        font-size: 24px;
+        padding: 8px 15px;
+        font-size: 22px;
         color: #000;
-    }
-
-    ul i {
-        padding-left: 45px;
-        font-size: 20px;
+        text-align: center;
     }
 }
+
 #container {
     background-color: #F3F3EC;
 }
+
 #home-container {
     display: flex;
     flex-direction: row;
@@ -83,84 +77,76 @@
 }
 
 #school a {
-background-color: white; 
-border-top: 12px solid #D7B17C;
-border-bottom: 1px solid #2A4765;
-border-left: 1px solid #2A4765;
-border-right: 1px solid #2A4765;
+    background-color: white;
+    border-top: 12px solid #D7B17C;
+    border-bottom: 1px solid #2A4765;
+    border-left: 1px solid #2A4765;
+    border-right: 1px solid #2A4765;
 
-&:hover {
-    background-color: #D7B17C;
-}
+    &:hover {
+        background-color: #D7B17C;
+    }
 }
 
 #students a {
-background-color: white; 
-border-top: 12px solid #73A790;
-border-bottom: 1px solid #2A4765;
-border-left: 1px solid #2A4765;
-border-right: 1px solid #2A4765;
+    background-color: white;
+    border-top: 12px solid #73A790;
+    border-bottom: 1px solid #2A4765;
+    border-left: 1px solid #2A4765;
+    border-right: 1px solid #2A4765;
 
-&:hover {
-    background-color: #73A790;
-}
+    &:hover {
+        background-color: #73A790;
+    }
 }
 
 #campus a {
-background-color: white; 
-border-top: 12px solid #EABAB9;
-border-bottom: 1px solid #2A4765;
-border-left: 1px solid #2A4765;
-border-right: 1px solid #2A4765;
+    background-color: white;
+    border-top: 12px solid #EABAB9;
+    border-bottom: 1px solid #2A4765;
+    border-left: 1px solid #2A4765;
+    border-right: 1px solid #2A4765;
 
-&:hover {
-    background-color: #EABAB9;
-}
+    &:hover {
+        background-color: #EABAB9;
+    }
 }
 
 #contact a {
-background-color: white; 
-border-top: 12px solid #2A4765;
-border-bottom: 1px solid #2A4765;
-border-left: 1px solid #2A4765;
-border-right: 1px solid #2A4765;
+    background-color: white;
+    border-top: 12px solid #2A4765;
+    border-bottom: 1px solid #2A4765;
+    border-left: 1px solid #2A4765;
+    border-right: 1px solid #2A4765;
 
-&:hover {
-    background-color: #2A4765;
-}
+    &:hover {
+        background-color: #2A4765;
+    }
 }
 
 // Media queries
 
 @media only screen and (max-width: 600px) {
 
-    #header-content {
-        position: static; /* Återställ till standard */
-        display: block; 
-        text-align: center; 
-    }
-
-    #header-text {
-        display: none;
+    #header-welcome h2 {
+        font-size: 20px !important;
     }
 
     img {
-        width: 100%; 
-        position: static; /* Återställ position till standard */
+        width: 100%;
+        position: static;
+        /* Återställ position till standard */
     }
 
     #header-links ul li {
-        display: block; /* Ändra display till block för att få länkarna på egen rad */
-        padding: 5px 0; 
+        display: block;
+        /* Ändra display till block för att få länkarna på egen rad */
+        padding: 5px 0;
     }
 
     #header-links ul a {
         font-size: 18px;
-        text-align: center;
-    }
-
-    #header-links ul i {
-        display: none;
+        letter-spacing: 0;
     }
 
     #home-container {
@@ -174,5 +160,31 @@ border-right: 1px solid #2A4765;
         width: 100%;
         margin: 0 auto;
         padding: 5px 5px;
+    }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 900px){
+
+    #home-container {
+        width: 100%;
+    }
+
+    #header-welcome h2 {
+        font-size: 24px !important;
+    }
+
+    #header-links ul li {
+        display: block;
+        padding: 5px 0;
+    }
+
+    #header-links ul a {
+        font-size: 18px;
+        letter-spacing: 0;
+    }
+    img {
+        width: 100%;
+        position: static;
+       
     }
 }

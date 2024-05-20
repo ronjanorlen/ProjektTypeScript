@@ -1,94 +1,117 @@
 #ramschema-container {
-    display: flex;
-    flex-direction: column;
-    width: 70%;
-    margin: 0 auto;
-    font-family: "Montserrat", sans-serif;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 auto;
+  font-family: "Montserrat", sans-serif;
 
-    h1, p {
-      text-align: center;
-    }
-    h1 {
-      margin-top: 5%;
-      font-size: 2.5rem;
-      font-weight: 500;
-      padding: 0 3%;
-    }
+  h1, p {
+    text-align: center;
+  }
+  h1 {
+    margin-top: 5%;
+    font-size: 2.5rem;
+    font-weight: 500;
+    padding: 0 3%;
+  }
 
-    p {
-      padding: 0 15%;
-      margin-bottom: 2%;
-    }
+  p {
+    padding: 0 15%;
+    margin-bottom: 2%;
+  }
+}
+
+#courses {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 25px auto;
+  width: 80%;
 }
 
 /* Tabellen */
 table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 5%;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  }
-  
-  /* Tabellhuvudet */
-  thead {
-    background-color: #f2f2f2;
-  }
-  
-  /* Tabellceller i huvudet */
-  th {
-    padding: 10px;
-    text-align: left;
-    font-size: 18px;
-  }
-  /* Tabellrader */
+  width: 70%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  margin-bottom: 5%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* Tabellhuvudet */
+thead {
+  background-color: #f2f2f2;
+}
+
+/* Tabellceller i huvudet */
+th {
+  padding: 10px;
+  text-align: left;
+  font-size: 18px;
+}
+
+/* Tabellrader */
 tbody tr {
-    background-color: white; 
-    border-bottom: 1px solid #ddd; 
-  }
-  
-  /* Tabellceller i rader */
-  td {
-    padding: 4px 12px;
-    text-align: left;
-  }
-  
-  /* Kursplan-länk */
-  a {
-    color: blue;
-    text-decoration: none;
-  }
-  
-  /* Lägg till-knapp */
-  button {
-    background-color: #324961;
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    cursor: pointer;
-    border-radius: 4px;
-    white-space: nowrap; 
-  }
-  
-  button:hover {
-    background-color: #154d8a;
-  }
+  background-color: white;
+  border-bottom: 1px solid #ddd;
+}
 
-// Media queries 
+/* Tabellceller i rader */
+td {
+  padding: 4px 12px;
+  text-align: left;
+}
 
-@media only screen and (max-width: 600px) {
-  #ramschema-container {
-    width: 100%;
-    overflow-x: auto; /* Horisontell scroll för tabell */
-  }
-  h1 {
-    line-height: 1.2em;
-  }
+/* Kursplan-länk */
+a {
+  color: blue;
+  text-decoration: none;
+}
 
-  p {
-    line-height: 1.6em;
-  }
+/* Lägg till-knapp */
+button {
+  background-color: #324961;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  white-space: nowrap;
+}
 
-  table {
-    margin-top: 8%;
-  }
+button:hover {
+  background-color: #154d8a;
+}
+
+/* Media queries */
+
+@media only screen and (max-width: 900px) {
+#ramschema-container {
+  width: 100%;
+}
+#courses {
+  width: 80%;
+  overflow-x: auto; /* Horisontell scroll för tabell */
+}
+h1 {
+  line-height: 1.2em;
+}
+
+p {
+  line-height: 1.6em;
+}
+
+table {
+  width: 80%;
+  margin: 0 auto;
+}
+
+th,
+td {
+  padding: 8px;
+}
+
+th {
+  font-size: 16px;
+}
 }
