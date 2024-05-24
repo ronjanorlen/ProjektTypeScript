@@ -131,8 +131,20 @@
 
 @media only screen and (max-width: 600px) {
 
+
+    #header-welcome {
+        position: absolute;
+        width: 90%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
     #header-welcome h2 {
-        font-size: 20px !important;
+        font-size: 18px !important;
+        padding: 5px 5px;
+        white-space: nowrap; 
     }
 
     img {

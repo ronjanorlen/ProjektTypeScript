@@ -27,6 +27,15 @@
         position: relative;
     }
 }
+
+#heading h1 {
+    display: none;
+    text-align: center;
+    padding: 25px 2px;
+    background-color: #2A4765;
+    color: #fff;
+} 
+
 #header-links {
     width: 80%;
     margin: 3% auto;
@@ -124,6 +133,10 @@
         #campus-welcome {
             display: none;
         }
+
+        #heading h1{
+            display: block;
+        }
     
         img {
             width: 100%; 
@@ -153,6 +166,10 @@
 
         #campus-welcome  {
             display: none;
+        }
+
+        #heading h1{
+            display: block;
         }
     
         #header-links ul li {

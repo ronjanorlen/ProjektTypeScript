@@ -20,16 +20,20 @@
         font-size: 22px;
         line-height: 1.4em;
     }
-
-    #union-welcome h1 {
-        font-size: 38px;  
-    }
     img {
         padding: 0;
         width: 100%;
         height: auto;
         position: relative;
     }
+}
+
+#heading h1 {
+    display: none;
+    text-align: center;
+    padding: 25px 2px;
+    background-color: #2A4765;
+    color: #fff;
 }
 
 #header-links {
@@ -124,9 +128,12 @@
 
 @media only screen and (max-width: 600px) {
 
-
     #union-welcome {
         display: none;
+    }
+
+    #heading h1{
+        display: block;
     }
 
     img {
@@ -157,6 +164,10 @@
 
     #union-welcome  {
         display: none;
+    }
+
+    #heading h1 {
+        display: block;
     }
 
     #header-links ul li {
