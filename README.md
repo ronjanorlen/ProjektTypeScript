@@ -1,27 +1,41 @@
-# ProjektTypeScript
+# DT208G - Programmering i TypeScript, Projektuppgift
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.4.
+Detta repository innehåller koden för en webbplats för ett fiktivt universitet som heter Björks. 
+På webbplatsen kan besökare söka bland kurser och ämnen samt skapa ett eget ramschema.
 
-## Development server
+## Om webbplatsen
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Webbplatsen är byggd med ramverket Angular och använder HTML, SCSS och TypeScript. 
+Innehåll på webbplatsen läses ut och hanteras genom Angulars komponenter, moduler och databindings. Besökare kan söka på kurser, filtrera på kursnamn, kurskod, poäng och ämne. 
+En länk till kursplanen för varje kurs finns även tillgänglig samt möjlighet att lägga till 
+en kurs i det egna ramschemat. 
 
-## Code scaffolding
+## Funktioner
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Följande funktioner är tillgängliga på webbplatsen
+* Sökfunktion: Möjlighet att söka på kurskod eller kursnamn.
+* Filtrering: Möjlighet att filtrera kurser på specifikt ämne.
+* Sortering: Möjlighet att sortera kurser efter kurskod, kursnamn, poäng och ämne. Detta görs genom att klicka på rubriken för respektive kolumn.
+* Skapa eget ramschema: Möjlighet att lägga till kurser till ett eget ramschema. Detta lagras och hanteras av localStorage vid sidomladdning.
+* Paginering: Möjlighet att klicka framåt och bakåt mellan flera sidor för kurslistan. 
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+# Arbetsgång
 
-## Running unit tests
+### Tekniker och verktyg som använts för att bygga webbplatsen
+* Angular och TypeScript.
+* Interface för att skapa struktur på kursdata.
+* Services för hantering av alla kurser samt ramschemat.
+* LocalStorage för att spara och ladda in kurser som sparats i ramschemat.
+* HttpClient för att hämta kursdata från extern JSON-fil.
+* NgxPagination: För paginering av kurslista.
+* Routing för att hantera navigering mellan olika sidor.
+* Netlify för publicering av webbplats.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Skapad:
+Av: Ronja Norlén  
+Kurs: Programmering i TypeScript  
+Program: Webbutveckling  
+Skola: Mittuniversitetet  
+År: 2024
